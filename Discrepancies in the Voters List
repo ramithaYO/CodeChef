@@ -1,0 +1,44 @@
+// link https://www.codechef.com/problems/VOTERS
+
+//code 
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main(){
+    int counter=0;
+map<int,int > mymap;
+int list1,list2,list3;
+
+cin>>list1>>list2>>list3;
+list1 = list1+list2+list3;
+int temp;
+for(int i =0;i<list1;i++){
+    cin>>temp;
+    
+    mymap[temp]++;
+  
+    
+}
+
+map<int,int>::iterator itr;
+for(itr= mymap.begin();itr!=mymap.end();itr++){
+    
+    if((itr->second)>=2){
+        counter++;
+       
+    }
+    
+}
+cout<<counter<<endl;
+for(itr= mymap.begin();itr!=mymap.end();itr++){
+    
+    if((itr->second)>=2){
+       
+        cout<<itr->first<<endl;
+    }
+    
+}
+return 0;
+}
