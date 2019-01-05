@@ -1,0 +1,73 @@
+//PPATTERN
+//link https://www.codechef.com/submit/PPATTERN
+
+#include<iostream>
+
+using namespace std;
+
+int main(){
+    int testcases,number;
+    cin>>testcases;
+    for(int l=0;l<testcases;l++){
+        cin>>number;
+       
+        int mat[number][number];
+       
+        int counter=1;
+        int i=0;
+        int value=0;
+        while(i<number){
+            int j=0;
+            while(i>=0){
+                mat[j][i]=counter;
+            
+                counter++;
+                j++;
+                i--;
+            
+            }
+        
+            value++;
+            i=value;
+            
+            
+            
+            
+        }
+          i=number-1;
+         value=number-1;
+         counter =number*number;
+         while(i>0){
+            int j=number-1;
+            while(i<=(number-1)){
+                mat[j][i]=counter;
+              
+                counter--;
+                j--;
+                i++;
+            
+            }
+          
+            value--;
+            i=value;
+            
+            
+            
+            
+        }
+        
+        
+       
+        for(int u=0;u<number;u++)
+        {
+            for(int k=0;k<number;k++){
+                cout<<mat[u][k]<<" ";
+            }
+            cout<<endl;
+            
+        }
+
+   
+}
+    return 0;
+}
